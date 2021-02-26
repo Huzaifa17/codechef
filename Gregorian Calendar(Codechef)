@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int t,i,n,j,l,nl;
+	long long int total;
+	char s[7][25]={"monday","tuesday","wednesday","thursday","friday","saturday","sunday"};
+	cin>>t;
+	for(i=0;i<t;i++){
+	cin>>n;
+	nl=0,l=0;
+	for(j=1900;j<n;j++){
+		if(j%400==0||(j%4==0&&j%100!=0))
+			l++;
+		else
+			nl++;
+	}
+	total=(l*2+nl)%7;
+	cout<<s[total]<<endl;
+	}
+	return 0;
+}
